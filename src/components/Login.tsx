@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaEye, FaEyeSlash, FaLock, FaUser } from "react-icons/fa";
+import { FaEnvelope, FaEye, FaEyeSlash, FaKey, FaUser } from "react-icons/fa";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -34,27 +34,29 @@ export function Login() {
 
   return (
     <div className="loginContainer">
-      <h1 className="loginHeader"> Login</h1>
       <FaUser className="faUserIcon"></FaUser>
+      <h1 className="loginHeader"> Login</h1>
       <form onSubmit={handleSubmit}>
         <label>
           <p>Email</p>
-          <FaUser className="fauser"></FaUser>
+          <FaEnvelope className="fauser"></FaEnvelope>
           <input
             type="text"
             name="email"
             id="email"
+            placeholder="Email"
             value={email}
             onChange={(e: any) => setEmail(e.target.value)}
           />
         </label>
         <label>
           <p>Password</p>
-          <FaLock className="falock"></FaLock>
+          <FaKey className="falock"></FaKey>
           <input
             type={passwordShown ? "text" : "password"}
             name="password"
             id="password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
@@ -72,8 +74,8 @@ export function Login() {
         </div>
 
         <div>
-          <button className="submit" type="submit">
-            Login
+          <button className="signUpBtn" type="submit">
+            Log In
           </button>
           <ToastContainer />
         </div>
