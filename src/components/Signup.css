@@ -1,0 +1,118 @@
+.signupContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+      217deg,
+      rgba(241, 127, 127, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(241, 127, 127, 0.6), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(242, 142, 202, 0.5), rgba(0, 0, 255, 0) 70.71%);
+  border-radius: 10px;
+  padding: 50px;
+  width: 400px;
+  text-align: center;
+  color: black;
+  border: 2px solid black;
+}
+
+.signupHeader {
+  font-size: 2.5rem;
+  margin-top: 0;
+  color: white;
+  margin-bottom: 15px;
+}
+
+#f_name,
+#l_name {
+  padding: 7px 0 7px 7px;
+  width: 222px;
+  margin: 10px 7px 10px 195px;
+  border-radius: 7px;
+  border: 1px solid black;
+  outline: none;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.confirmPass {
+  padding: 7px 0 7px 28px;
+  width: 200px;
+  margin: 10px 7px 10px 195px;
+  border-radius: 7px;
+  border: 1px solid black;
+  outline: none;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+#confirm_email {
+  padding: 7px 0 7px 28px;
+  width: 200px;
+  margin: 10px 7px 10px 195px;
+  border-radius: 7px;
+  border: 1px solid black;
+  outline: none;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+#confirm_password {
+  padding: 7px 0 7px 28px;
+  width: 200px;
+  margin: 10px 7px 10px 195px;
+  border-radius: 7px;
+  border: 1px solid black;
+  outline: none;
+  letter-spacing: 1px;
+  font-size: 1.2rem;
+}
+
+.conmfirm_fauser {
+  position: absolute;
+  display: inline;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 20px -20px -20px 200px;
+}
+
+.confirm_falock {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: 20px -20px -20px 200px;
+}
+
+i:hover {
+  cursor: pointer;
+  color: rgb(152, 0, 109);
+}
+
+.confirm_faEye {
+  position: absolute;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin: -40px 395px;
+  font-size: 1.5rem;
+}
+
+.faEyeConfirm {
+  position: absolute;
+  margin: -40px 195px;
+  font-size: 1.5rem;
+}
+
+label p {
+  position: absolute;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  margin-top: 15px;
+  margin-left: 0;
+}
