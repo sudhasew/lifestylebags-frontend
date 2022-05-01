@@ -59,20 +59,38 @@ export function SignUp() {
   function handleSubmit(e: any) {
     e.preventDefault();
 
+    console.log("email length", email.length);
     if (email.length === 0 && password.length === 0) {
       signUpError();
+      console.log("email length", email.length);
       return;
     } else if (password.length < 8 && confirmPassword.length < 8) {
       passwordLengthError();
     } else if (password !== confirmPassword) {
       passwordNoMatchError();
-    }
-    setFirstName("");
-    setLastName("");
-    setEmail("");
-    setPassword("");
+    } else {
+      // loginUser();
+      let formData = new FormData(e.currentTarget);
+      let first_name: string = formData.get("first_name") as string;
+      let last_name: string = formData.get("last_name") as string;
+      let email: string = formData.get("email") as string;
+      let password: string = formData.get("password") as string;
+      // signUp(first_name, last_name, email, password).then((newuser) =>
+      //   addUser(newuser)
+      // );
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+      setPassword("");
 
-    navigate("/login");
+      navigate("/login");
+    }
+
+    //   logIn(email, password)
+    //         .then((response) => {
+    //           if (response.email !== email) {
+    //             return;
+    //           }
   }
 
   return (
