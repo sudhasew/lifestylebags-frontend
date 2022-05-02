@@ -165,7 +165,7 @@ export function SignUp() {
         </div>
         <div>
           <button className="signUpBtn" type="submit">
-            SignUp
+            Sign Up
           </button>
           <ToastContainer />
         </div>

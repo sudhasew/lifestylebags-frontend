@@ -49,7 +49,9 @@ function App() {
   return (
     <div className="appContainer">
       <div>
-        <h1 className="welcome">Welcome to my website!</h1>
+        <Link to="/">
+          <img className="welcome" src="myLogo.jpeg" alt="my logo"></img>
+        </Link>
       </div>
       <div className="appLinks">
         <Link className="loginApp_link" to="/login">

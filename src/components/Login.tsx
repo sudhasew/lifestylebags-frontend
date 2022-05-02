@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { FaEnvelope, FaEye, FaEyeSlash, FaKey, FaUser } from "react-icons/fa";
 import { fetchCustomer, logIn } from "../services/LifeStyleBags";
 import { BagsContext } from "../context/BagsContext";
+import "../components/Login.css";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -106,7 +107,7 @@ export function Login() {
         </div>
 
         <div>
-          <button className="signUpBtn" type="submit">
+          <button className="loginBtn" type="submit">
             Log In
           </button>
           <ToastContainer />
