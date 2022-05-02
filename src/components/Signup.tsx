@@ -92,7 +92,7 @@ export function SignUp() {
 
   return (
     <div className="signupContainer">
-      <h1 className="signupHeader"> SignUp </h1>
+      <h1 className="signupHeader"> Sign-Up </h1>
       <form onSubmit={handleSubmit}>
         <label>
           <p>First Name</p>

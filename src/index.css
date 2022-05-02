@@ -38,13 +38,14 @@ code {
   margin: 10px;
   width: 30px;
   cursor: pointer;
+  transition: transform 0.5s;
 }
 
-.signUpBtn:hover,
-.link:hover {
-  color: white;
+.welcome:hover {
+  transform: scale(1.5);
 }
 
 .signoutApp_link {
   cursor: pointer;
+  transition: 0.7s;
 }

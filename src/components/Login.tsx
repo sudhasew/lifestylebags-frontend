@@ -68,7 +68,7 @@ export function Login() {
   return (
     <div className="loginContainer">
       <FaUser className="faUserIcon"></FaUser>
-      <h1 className="loginHeader"> Login</h1>
+      <h1 className="loginHeader"> Log-In</h1>
       <form onSubmit={handleSubmit}>
         <label>
           <p>Email</p>
