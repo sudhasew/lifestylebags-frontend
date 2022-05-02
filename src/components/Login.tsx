@@ -1,13 +1,18 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaEnvelope, FaEye, FaEyeSlash, FaKey, FaUser } from "react-icons/fa";
+import { fetchCustomer, logIn } from "../services/LifeStyleBags";
+import { BagsContext } from "../context/BagsContext";
 
 export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordShown, setPasswordShown] = useState(false);
+  let navigate = useNavigate();
+  const { loginCustomer, addFirstName, addLastName, addCustomerId } =
+    useContext(BagsContext);
 
   const loginError = () =>
     toast.error("Invalid email or password", {
@@ -25,6 +30,33 @@ export function Login() {
     if (email.length === 0 || password.length === 0) {
       loginError();
       return;
+    } else {
+      let formData = new FormData(e.currentTarget);
+
+      let email: string = formData.get("email") as string;
+      let password: string = formData.get("password") as string;
+      logIn(email, password)
+        .then((response) => fetchCustomer(response.id))
+        .then((data) => {
+          addFirstName(data.first_name);
+          addLastName(data.last_name);
+          addCustomerId(data.id);
+        })
+        .catch((error) => console.log(error));
+
+      // checked for logged users
+      logIn(email, password)
+        .then((response) => {
+          if (response.email !== email) {
+            return;
+          }
+          loginCustomer();
+          navigate("/signup");
+        })
+        .catch((error) => {
+          loginError();
+          console.log(error);
+        });
     }
   }
 

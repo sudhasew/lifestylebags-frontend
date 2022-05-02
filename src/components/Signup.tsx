@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FaEnvelope, FaEye, FaEyeSlash, FaKey } from "react-icons/fa";
 import "./Signup.css";
+import { BagsContext } from "../context/BagsContext";
+import { signUp } from "../services/LifeStyleBags";
 
 export function SignUp() {
+  const { addCustomer, loginCustomer } = useContext(BagsContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -69,15 +72,15 @@ export function SignUp() {
     } else if (password !== confirmPassword) {
       passwordNoMatchError();
     } else {
-      // loginUser();
+      loginCustomer();
       let formData = new FormData(e.currentTarget);
       let first_name: string = formData.get("first_name") as string;
       let last_name: string = formData.get("last_name") as string;
       let email: string = formData.get("email") as string;
       let password: string = formData.get("password") as string;
-      // signUp(first_name, last_name, email, password).then((newuser) =>
-      //   addUser(newuser)
-      // );
+      signUp(first_name, last_name, email, password).then((newuser) =>
+        addCustomer(newuser)
+      );
       setFirstName("");
       setLastName("");
       setEmail("");
@@ -85,12 +88,6 @@ export function SignUp() {
 
       navigate("/login");
     }
-
-    //   logIn(email, password)
-    //         .then((response) => {
-    //           if (response.email !== email) {
-    //             return;
-    //           }
   }
 
   return (
